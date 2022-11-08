@@ -1,0 +1,139 @@
+.bookCount {
+    margin-left: 134px;
+    margin-top: 20px;
+}
+
+#book-count {
+    margin-top: -22px;
+    margin-left: 3%;
+    font-size: medium;
+    color: gainsboro;
+}
+
+.books {
+    font-size: 25px;
+    margin-left: -41px;
+}
+
+.sort {
+    margin-top: -67px;
+    margin-left: 63%;
+    border-radius: none;
+    outline: none;
+}
+
+.count {
+    margin-left: 10px;
+    font-size: 15px;
+    opacity: 0.6;
+}
+
+.matselect {
+    color: brown;
+    height: 10px;
+    outline: none;
+}
+
+.sort{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 74%;
+}
+.book-elements{
+    margin: 0px;
+}
+#book-image{
+    height: 120px;
+    margin-top: 100px;
+}
+.image-book{
+    height: 150px;
+    width: 188px;
+    background-color: #F5F5F5;
+}
+.book-detail{
+    height: auto;
+    margin: 10px;
+}
+.book{
+    width: 190px;
+    border: 1px solid rgba(190, 185, 185, 0.279);
+    border-radius: 3px;
+    margin-bottom: 30px;
+    margin-right: 60px;
+    height: auto;
+}
+.main-book{
+    width: 100%;
+    min-height: 90vh;
+    // border: 1px solid green;
+}
+.book:hover{
+    box-shadow: 0px 0px 1px 3px rgba(167, 163, 163, 0.141);
+}
+.rating{
+    height: 20px;
+    width: 50px;
+}
+.rate{
+    background-color: green;
+    width: 30px;
+    color: #fff;
+    font-size: 10px;
+    height: 15px;
+}
+#star{
+    width: 10px;
+    filter: invert(1);
+}
+.book-dropdown{
+    width: 88%;
+}
+
+.dropdown {
+    position:relative;
+    display: inline-block;
+    margin-left: 760px;
+    padding: 10px;
+    width: 20%;
+    // border: 2px solid red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    // padding: 0px 5px;
+    border-radius: 2px;
+    // z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+#sort{
+    border: 1px solid rgba(0, 0, 0, 0.148);
+    width: 100px;
+    border-radius: 2px;
+}
+
+.dropdown-item:hover{
+    cursor: pointer;
+}
+.text-right{
+    margin-left: 260px;
+}
+.main{
+    width: 80vw;
+}
+
+.icons{
+    height: 30px;
+    margin-left: 130px;
+    margin-bottom: 30px;
+
+}

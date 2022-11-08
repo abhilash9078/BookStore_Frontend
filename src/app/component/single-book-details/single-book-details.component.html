@@ -1,0 +1,64 @@
+<div class="main">
+    <div id="heading1">
+        <h1 routerLink="/dashboard/books">Home</h1>
+        <h1>/Book</h1>
+    </div>
+    <div class="box1" fxLayout="row" fxLayoutAlign="start start" *ngFor="let book of book_details">
+        <div id="box-1-1">
+            <img src="../../../assets/Image 11.png">
+        </div>
+        <div id="box-0-1">
+            <img src="../../../assets/bookback.jpg">
+        </div>
+        <div id="box-1-2">
+            <img src="../../../assets/Image 11.png">
+            <div>
+                <div class="button1">
+                    <button class="cart-button" (click)="addToCart(book.id)">ADD TO BAG</button>
+                    <button class="wishlist-button" (click)="addToWishlist(book.id)">WISHLIST</button>
+                </div>
+            </div>
+        </div>
+        <div id="box-1-3">
+            <h1>{{book.book_name}}</h1>
+            <h2>by {{book.author}}</h2>
+            <div class="rating" fxLayout="row" fxLayoutAlign="space-evenly center">
+                <h3>4.5 <img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt=""></h3>
+                <h4>({{book.quantity_now}})</h4>
+            </div>
+            <div class="rating" fxLayout="row" fxLayoutAlign="space-evenly center">
+                <h5>Rs.{{book.price}}</h5>
+            </div>
+            <p> ______________________________________________________________________________</p>
+            <div class="para">
+                <h2> Book Details</h2>
+            </div>
+            <div class="desc">
+                {{book.description}}
+            </div>
+            <p>_______________________________________________________________________________</p>
+            <div class="customer-details">
+                <h1>Customer Feedback</h1>
+                <div class="feedback">
+                    <h1>Overall Rating</h1>
+                    <div id="image">
+                        <div><img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" style="height:40px;"></div>
+                        <div><img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" style="height:40px;"></div>
+                        <div><img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" style="height:40px;"></div>
+                        <div><img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" style="height:40px;"></div>
+                        <div><img src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" style="height:40px;"></div>
+                    </div>
+                    <input placeholder='Write your reviews' type="text" id="text-field">
+                    <button mat-flat-button id="button">Submit</button>
+
+
+                </div>
+                
+
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

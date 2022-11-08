@@ -1,0 +1,102 @@
+<div class="main">
+    <div class="main-box" fxLayout="column" fxLayoutAlign="start start" >
+        <div class="box-1">
+            <h1 routerLink="/dashboard/books">Home/</h1>
+            <h2>My Cart</h2>
+        </div>
+        <div class="box-2" fxLayout="row" fxLayoutAlign="start start">
+            <div class="box-2-1">
+                <h1>My Cart({{cart_items.length}})</h1>
+                <div fxLayout="row" fxLayoutAlign="space-between start" *ngFor="let cart of cart_items">
+                    <div class="box-2-1-1">
+                        <img src="../../../assets/Image 11.png">
+                    </div>
+                    <div class="box-2-1-2" >
+                        <h1>{{cart.book_id.book_name}}</h1>
+                        <h2>by {{cart.book_id.author}}</h2>
+                        <div class="price">
+                            <h3>Rs. {{cart.book_id.price}}</h3>
+                        </div>
+                        <div class="cart-buttons">
+                            <img src="../../../assets/remove_FILL0_wght400_GRAD0_opsz48.svg" id="cart-button"
+                                (click)="RemoveCartItems(cart.quantity,cart.id)">
+                            <input id="button3" [(ngModel)]="cart.quantity">
+                            <img src="../../../assets/add_FILL0_wght400_GRAD0_opsz48.svg" id="cart-button"
+                                (click)="AddCartItems(cart.quantity,cart.id)">
+                            <button id="hover-remove" (click)="delCartItems(cart.id)"
+                                     mat-flat-button>Remove</button>
+                        </div>
+                        
+
+                    </div>
+                </div>
+                <div>
+                    <button id='button' (click)="placeOrder()">PLACE ORDER</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="box-3-1" *ngIf="!placeorder">
+            <h1>Address Details</h1>
+        </div>
+        <div class="box-3" *ngIf="placeorder">
+            <div class="address-details">
+                <h1>Customer Details</h1>
+                <div class="address-complete" >
+                    <div fxLayout="row" fxLayoutAlign="space-between center" *ngFor="let cart of cart_items">
+                        <div fxLayout="column" fxLayoutAlign="center start">
+                            <h3>Full Name</h3>
+                            <button id="user_name">{{cart.user_id.username}}</button>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="center start" style="margin-left:50px ;">
+                            <h3>Mobile Number</h3>
+                            <button id="user_name">{{cart.user_id.mobile_no}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="work">1.Work</h2>
+            <div class="address-div" fxLayout="column" fxLayoutAlign="center start">
+                <h3>Address</h3>
+                <input class="address-input" type="text" [(ngModel)]="address">
+            </div>
+            <div class="address-div" fxLayout="row" fxLayoutAlign="space-between center">
+                <div fxLayout="column" fxLayoutAlign="center start">
+                    <h3>City</h3>
+                    <input class="text-input" type="text" [(ngModel)]="city">
+                    <div class="text-input1">
+                        <h3>State</h3>
+                        <input class="text-input" type="text" [(ngModel)]="state">
+                    </div>
+                </div>
+                <div>
+                    <button id='button_cont' (click)="checkout()">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <div class="box-3-1" *ngIf="!continue_check">
+            <h1>Order Summary</h1>
+        </div>
+        <div class="box-4" *ngIf="continue_check">
+            <div class="address">
+                <h1>Order Summary</h1>
+                <div fxLayout="row" *ngFor="let cart of cart_items">
+                    <div>
+                        <img class="image-book" src="../../../assets/Image 11.png" alt="">
+                    </div>
+                    <div class="order-detail">
+                        <h2 >{{cart.book_id.book_name}}</h2>
+                        <h3 >by {{cart.book_id.author}} </h3>
+                        <div class="price">
+                            <h4>Rs. {{cart.total_price}}</h4>
+                        </div>
+                    </div>
+                    <div class="button-box" >
+                        <button id="button" routerLink="/dashboard/order" (click)="CheckoutOrder(cart.id)"
+                        >CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

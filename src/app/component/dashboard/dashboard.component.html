@@ -1,0 +1,40 @@
+<div class="main">
+    <div class="navbar" fxLayout="row" fxLayoutAlign="center center">
+        <div class="navbar-elements" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="heading" fxLayout="row" fxLayoutAlign="center center">
+                <img src="../../../assets/education.svg">
+                <h2 id="heading-h2" routerLink="/dashboard/books">Bookstore</h2>
+            </div>
+            <div class="input-bar" fxLayout="row" fxLayoutAlign="center center">
+                <div class="logo-search">
+                    <img src="../../../assets/search_FILL0_wght400_GRAD0_opsz48 (1).svg">
+                </div>
+                <input id="input-bar" placeholder="Search" >
+            </div>
+            <div fxLayout="row">
+                <div class="account-icon" fxLayout="column" fxLayoutAlign="center center">
+                    <img id="cart-image" src="../../../assets/person_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                    <p mat-button [matMenuTriggerFor]="menu">Profile</p>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item routerLink="/dashboard/profile">Profile</button>
+                            <button mat-menu-item>My Order</button>
+                            <button mat-menu-item routerLink="/dashboard/wishlist">My Wishlist</button>
+                            <button class="logout">Logout</button>
+                        </mat-menu>
+                </div>
+                <div class="cart-icon" fxLayout="column" fxLayoutAlign="center center"  
+                         matBadge ={{cart_details?.length}} matBadgeColor="warn" matBadgeOverlap="false"  matBadgePosition="after">
+                    <div ><img id="cart-image"  src="../../../assets/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt=""></div>
+                    <p routerLink="/dashboard/cart">Cart</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div fxLayot="column" fxLayoutAlign="center center">
+        <div class="books">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    
+    
+</div>

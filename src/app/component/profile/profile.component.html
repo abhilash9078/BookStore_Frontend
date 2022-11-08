@@ -1,0 +1,56 @@
+<div class="main">
+    <div class="main-top">
+        <div class="home-link" fxLayout="row">
+            <p id="link-p" routerLink="/dashboard/books">Home</p>
+            <p>/Profile</p>
+        </div>
+        <div class="profile">
+            <div class="heading-button" fxLayout="row" fxLayoutAlign="space-between end">
+                <div class="heading" fxLayout="row" fxLayoutAlign="start end">
+                    <h1 id="heading-h1">Personal Details</h1>
+                    <h5 class="heading-h5" >Edit</h5>
+                </div>
+            </div>
+            <div class="form" >
+                <p class="profile-p">Full Name</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.username" readonly>
+                <p class="profile-p">Email Id</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.email" readonly>
+                <p class="profile-p">Mobile Number</p>
+                <input type="text" class="profile-input-dis" [(ngModel)]="user_details.mobile_no" readonly>
+            </div>
+        </div>
+
+        <div class="profile">
+            <div class="heading-button" fxLayout="row" fxLayoutAlign="space-between end">
+                <div class="heading" fxLayout="row" fxLayoutAlign="start end">
+                    <div class="InColm">
+                        <h1 id="heading-h1">Address Details</h1>
+                        <h2>1.WORK</h2>
+                        <div class="form">
+                            <p class="profile-p">Address</p>
+                            <input type="text" class="address-input-dis"  readonly>
+                            <p class="profile-p">City/Town</p>
+                            <div class="InRow">
+                                <input type="text" class="state-input-dis1"  readonly>
+                                <p class="state">State</p>
+                                <input type="text" class="state-input-dis2" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="heading-h3" >Edit</h3>
+                </div>
+                
+            </div>
+            <p class="profile-p">Type</p>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Home</mat-radio-button>
+                <mat-radio-button value="2">Work</mat-radio-button>
+                <mat-radio-button value="3">Other</mat-radio-button>  
+            </mat-radio-group>
+
+        </div>
+
+
+    </div>
+</div>

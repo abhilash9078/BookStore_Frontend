@@ -1,0 +1,51 @@
+<div>
+    <div class="bookCount">
+        <span class="books">Books <p id="book-count">({{bookArray?.length}} items)</p></span>
+        <span class="count"></span>
+    </div>
+    <div class="sort">
+        <mat-form-field appearance="outline">
+            <mat-label>Sort by relevance</mat-label>
+            <mat-select class="matselect">
+                <mat-option value="one">Price:Low to High</mat-option>
+                <mat-option value="two">Price:High to Low</mat-option>
+                <mat-option value="third">Newest Arrivals</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="main-book" fxLayout="row wrap" fxLayoutAlign="start start">
+        <div class="book" fxLayout="column" *ngFor="let book of bookArray" (click)="book_details(book.id)">
+            <button *ngIf="book.quantity_now==0">Out Of Stock</button>
+            <div class="image-book" fxLayout="column" fxLayoutAlign="center center">
+                <img id="book-image" src="../../../assets/Image 11.png" alt="">
+                <img src="../../../assets/favorite_FILL0_wght400_GRAD0_opsz48.svg" class="icons"
+                (click)="addToWishlist(book.id)" *ngIf="!book.is_wishlist">
+                <img src="../../../assets/red-heart-icon.webp" class="icons"
+                *ngIf="book.is_wishlist">
+                <img src="../../../assets/remove_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" class="icons"
+                *ngIf="book.is_cart">
+                <img src="../../../assets/shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" class="icons"
+                (click)="addToCart(book.id)" *ngIf="!book.is_cart">
+            </div>
+            <div class="book-detail">
+                <h4 class="book-elements">{{book.book_name}}</h4>
+                <h6 class="book-elements">By {{book.author}}</h6>
+                <div class="rating" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="rate" fxLayout="row" fxLayoutAlign="space-around center">
+                        {{book.ratings}}
+                        <img id="star" src="../../../assets/star_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                    </div>
+                    <h6>{{book.quantity_now}}</h6>
+                </div>
+                <h5 class="book-elements">Rs. {{book.price}}</h5>
+            </div>
+        </div>
+       
+    </div>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              [pageSizeOptions]="[8, 12, 24, 48]"
+              aria-label="Select page">
+    </mat-paginator>
+</div>

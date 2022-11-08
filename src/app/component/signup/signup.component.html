@@ -1,0 +1,70 @@
+<div class="Block ">
+    <mat-card class="mat1">
+        <div>
+            <img class="img" src="../../../assets/logo.png" alt="">
+        </div>
+        <div class="text">
+            ONLINE BOOK SHOPPING
+        </div>
+    </mat-card>
+
+    <mat-card class="mat2">
+        <div>
+            <a class="login" routerLink="/login" style="text-decoration: none;">LOGIN </a>
+            <a class="signup" routerLink="/signup" style="text-decoration: none;">SIGNUP</a>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-fields">
+                <div class="fullname">
+                    <div>
+                        <mat-label>Full Name</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input formControlName="FullName" matInput placeholder="">
+                            <mat-error>Enter full name</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <div>
+                        <mat-label>Email Id</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input formControlName="Email" matInput placeholder="">
+                            <mat-error>Enter an email address</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="password">
+                    <div>
+                        <mat-label>Password</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <input formControlName="Password" matInput placeholder="">
+                            <mat-error>Enter a password more than 8 digit </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="number">
+                    <div>
+                        <mat-label>Mobile Number</mat-label>
+                    </div>
+                    <div>
+                        <mat-form-field appearance="outline">
+
+                            <input formControlName="MobileNumber" matInput placeholder="">
+                            <mat-error>Enter a valid 10 digit mobile number</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <button mat-button class="signupbutton">Signup</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

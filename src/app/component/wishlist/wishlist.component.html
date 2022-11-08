@@ -1,0 +1,27 @@
+<div class="main">
+    <div class="heading">
+       <h1 routerLink="/dashboard/books">Home</h1>
+       <h2>/My Wishlist</h2>
+   </div>
+   <div class="box-1" fxLayout="column" fxLayoutAlign="start stretch">
+       <div class="box-1-1">
+           <h1>My Whishlist ({{product_list?.length}})</h1>
+       </div>
+       <div class="box-1-2"  *ngFor="let list of product_list">
+           <div class="image-box">
+               <img src="../../../assets/Image 11.png">
+           </div>
+           <div class="contents" >
+               <h1>{{list.book_id.book_name}}</h1>
+               <h2>by {{list.book_id.author}}</h2>
+               <div class="price">
+                   <h3>Rs.{{list.total_price}}</h3>
+               </div>
+           </div>
+           <div class="delete-icon">
+               <img src="../../../assets/delete_FILL0_wght400_GRAD0_opsz48 (1).svg" 
+                        (click)="deleteWishlist(list.id)">
+           </div>
+       </div>
+   </div>
+</div>
